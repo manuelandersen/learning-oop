@@ -44,3 +44,10 @@ What if we want the Hero to change it's weapon by equiping or dropping one? And 
 So we want the Hero and the Enemy to behave differently --> Class Inheritance:
 
 Because we have a complete class, we can create as many subclasses out of it.
+
+# Health Bars as classes
+
+Wht properties should it have?
+    - Lenght
+    - Maximum value
+    - Dynamic value 
