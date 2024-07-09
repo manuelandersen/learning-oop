@@ -1,10 +1,12 @@
 import os
-from character import Hero, Enemy
+from character import Hero, Enemy, Warrior, Warlock
 from weapon import short_bow, iron_sword
 
-hero = Hero(name="Hero", health=100)
-hero.equip(weapon=iron_sword)
-enemy = Enemy(name="Enemy", health=100, weapon=short_bow )
+#hero = Hero(name="Hero", health=100)
+#hero.equip(weapon=iron_sword)
+hero = Warrior(name="Warrior")
+#enemy = Enemy(name="Enemy", health=100, weapon=short_bow )
+enemy = Warlock(name="Warlock")
 
 while True:
 
