@@ -1,15 +1,10 @@
-from weapon import fists
+from weapon import fists, short_bow
 from health_bar import HealthBar
 
 class Character:
 
-    race = "Human"
-
-    def __init__(self, name: str, health: int):
+    def __init__(self, name: str):
         self.name = name
-        self.health = health
-        self.health_max = health
-        self.weapon = fists
 
     def attack(self, target) -> None:
         target.health -= self.weapon.damage
@@ -17,6 +12,29 @@ class Character:
         target.health_bar.update()
         print(f"{self.name} dealt {self.weapon.damage} damage to {target.name} with {self.weapon.name}")
 
+class Warrior(Character):
+
+    health = 150
+    weapon = fists
+
+    def __init__(self, name: str) -> None:
+        super().__init__(name=name)
+        self.weapon = self.weapon
+        self.health = self.health
+        self.health_max = self.health
+        self.health_bar = HealthBar(self, color='green')
+
+class Warlock(Character):
+
+    health = 120
+    weapon = short_bow
+
+    def __init__(self, name: str) -> None:
+        super().__init__(name=name)
+        self.weapon = self.weapon
+        self.health = self.health
+        self.health_max = self.health
+        self.health_bar = HealthBar(self, color='red')
 
 class Hero(Character):
 
@@ -34,6 +52,8 @@ class Hero(Character):
         self.weapon = self.default_weapon
 
 class Enemy(Character):
+
+    health = 120
 
     def __init__(self, name: str, 
                  health: int,
