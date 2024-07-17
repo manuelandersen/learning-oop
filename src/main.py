@@ -2,11 +2,21 @@ import os
 from character import Hero, Enemy, Warrior, Warlock
 from weapon import short_bow, iron_sword
 
-#hero = Hero(name="Hero", health=100)
-#hero.equip(weapon=iron_sword)
-hero = Warrior(name="Warrior")
-#enemy = Enemy(name="Enemy", health=100, weapon=short_bow )
+class_mapping = {
+    'wr': Warrior,
+    'wl': Warlock
+}
+
 enemy = Warlock(name="Warlock")
+
+print("Choose a class for your hero:")
+class_chosen = input("- Press 'wr' for Warrior, 'wl' for Warlock: \n").lower()
+
+print("Choose a name for your hero:")
+name_choosen = input()
+
+hero_class = class_mapping.get(class_chosen, Warrior)
+hero = hero_class(name=name_choosen)
 
 while True:
 

@@ -20,3 +20,7 @@ fists = Weapon(name="Fists",
                     weapon_type="blunt",
                     damage=2,
                     value=0)
+wooden_sword = Weapon(name="Wooden_Sword",
+                      weapon_type="sharp",
+                      damage=2, 
+                      value=3)
