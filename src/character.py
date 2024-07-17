@@ -1,4 +1,4 @@
-from weapon import fists, short_bow
+from weapon import fists, short_bow, wooden_sword
 from health_bar import HealthBar
 
 class Character:
@@ -15,10 +15,11 @@ class Character:
 class Warrior(Character):
 
     health = 150
-    weapon = fists
+    weapon = wooden_sword
 
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
+        self.name = "(wr)" + name 
         self.weapon = self.weapon
         self.health = self.health
         self.health_max = self.health
